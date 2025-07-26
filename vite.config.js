@@ -3,7 +3,7 @@ import { defineConfig } from 'vite';
 export default defineConfig({
   // Aquí es donde especificarás tu directorio raíz
   // Por ejemplo, si tus archivos principales están en una carpeta llamada 'src':
-  root: './', 
+  root: '.', 
 
   // O si tus archivos principales están en una carpeta llamada 'app':
   // root: 'app', 
