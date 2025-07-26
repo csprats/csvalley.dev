@@ -5,15 +5,15 @@ let score = 0;
 //ball
 const ballimage = new Image();
 ballimage.src = "./ballBlue.png"
-let ballx = canvas.width / 2;
-let bally = canvas.height - 30;
-let bx = 0.25;
-let by = -3;
+let ballx = canvas.width - 30;
+let bally = canvas.height - 100;
+let bx = 4.5;
+let by = -4.5;
 let ballRadius = 22;
 //paddle
 const paddleimage = new Image();
 paddleimage.src = "./paddleRed.png";
-const paddleWidth = 104;
+const paddleWidth = 124;
 const paddleHeight = 24;
 let paddlex = (canvas.width - paddleWidth) / 2;
 
@@ -74,8 +74,13 @@ function ballCollisions()
 			bx += 0.5;
 		}
 		else if (bally + by > canvas.height){
-			alert(`Game over! Score: ${score}`);
-			document.location.reload();
+			//alert(`Game over! Score: ${score}`);
+			let reload = true;
+			if (reload)
+			{
+				window.location.reload();
+				reload = false;
+			}
 		}
 	}
 	for (c = 0; c < brickColumnCount; c++) {
@@ -110,15 +115,12 @@ function movePaddle() {
 	  if (left && paddlex > 0) {
 		paddlex -= 18;
 	}
-	//console.log(a);
-	//console.log(d);
 
 }
 
 function moveBall() {
 	
 	  ctx.beginPath();
-	  //ctx.arc(ballx, bally, ballRadius, 0, Math.PI * 2);
 	  ctx.drawImage(ballimage, ballx, bally);
 	  ctx.closePath();
 	  ballx += bx;
@@ -132,8 +134,13 @@ function drawScore() {
   ctx.fillText("Score: " + score, 8, canvas.height);
   if (score / 10 == brickRowCount * brickColumnCount)
   {
-	  alert("You win!");
-	  window.location.reload();
+	  //alert("You win!");
+	  let reload = true;
+	  if (reload)
+	  {
+	      window.location.reload();
+	      reload = false;
+	  }
   }
 }
 
