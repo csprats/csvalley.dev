@@ -6,12 +6,16 @@ html
 	font-family: sans-serif;
 	text-align: center;
 }
+body {
+	background-color: #eee;
+}
 textarea, iframe
 {
 	resize: none;
 	width: 400px;
 	height: 200px;
 	margin-bottom: 30px;
+	background-color: #eee;
 }
 input
 {
