@@ -1,16 +1,22 @@
-import { defineConfig } from 'vite';
+import { defineConfig } from 'vite'
+import path from 'path'
+import { fileURLToPath } from 'url'
+
+// Define __dirname para que funcione en entornos de módulo ES
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
 export default defineConfig({
-  // Aquí es donde especificarás tu directorio raíz
-  // Por ejemplo, si tus archivos principales están en una carpeta llamada 'src':
-  root: '.', 
-
-  // O si tus archivos principales están en una carpeta llamada 'app':
-  // root: 'app', 
-
-  // También puedes añadir otras configuraciones del servidor si lo necesitas
   server: {
-    port: 3000, // Puerto predeterminado de Vite
-    open: false, // Abre el navegador automáticamente al iniciar el servidor
-  }
+    port: 3000,
+    open: false,
+  },
+
+  build: {
+    rollupOptions: {
+      input: {
+        writter: path.resolve(__dirname, 'src/valley-writter/index.html'),
+      },
+    },
+  },
 });
