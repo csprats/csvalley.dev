@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite'
-import path from 'path'
+import path, { dirname } from 'path'
 import { fileURLToPath } from 'url'
 
 // Define __dirname para que funcione en entornos de módulo ES
@@ -15,6 +15,7 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
+        what: path.resolve(__dirname, 'writter.html'),
         writter: path.resolve(__dirname, 'src/valley-writter/index.html'),
       },
     },
