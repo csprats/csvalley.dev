@@ -12,12 +12,12 @@ export default defineConfig({
     open: false,
   },
 
-  build: {
+  /*build: {
     rollupOptions: {
       input: {
         what: path.resolve(__dirname, 'writter.html'),
         writter: path.resolve(__dirname, 'src/valley-writter/index.html'),
       },
     },
-  },
+  },*/
 });
