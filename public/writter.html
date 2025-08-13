@@ -2,12 +2,12 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<title>Valley writter</title>
+		<title>Writter</title>
 		<meta name="generator" content="Geany 1.36" />
 	</head>
 
 	<body>
-		<h1>Valley writter</h1>
+		<h1>Writter</h1>
 		<textarea id="text" spellcheck="false" 
 		placeholder="Write here the JSON variables"></textarea>
 		<br>
@@ -60,24 +60,28 @@
 
 	<script>
 		let data = {
-			"text1": "This a text whit params",
-			"text2": "This a other text whit params",
+			"title": "A title",
+			"texts": [
+				"A normal text",
+				"A other normal text",
+			],
 			"style": {
 				"color": "black",
 				"backgroundColor": "white",
-				"font": "sans-serif",
+				"font": "cursive",
 				"align": "center"
 			}
 		};
 
+		const preview = document.getElementById('preview')
 
 		document.getElementById("text").value = JSON.stringify(data, null, 3);
-
+		
 		function print (n)
 		{
 			try
 			{
-				document.getElementById("preview").srcdoc = "";
+				preview.srcdoc = "";
 				if (document.getElementById("reload"))
 				{
 					document.getElementById("reload").remove();
@@ -86,13 +90,13 @@
 				data = JSON.parse(document.getElementById("text").value);
 				const currenttext = JSON.parse(document.getElementById("text").value);
 				
-				for (let i = 1; i < n; i++)
-				{
-					const text = currenttext["text" + i];
-					document.getElementById("preview").srcdoc += 
-					"<p>" + text + "</p>";
-				}
-				document.getElementById("preview").srcdoc += 
+				preview.srcdoc += `<h1>${currenttext.title}</h1>`
+
+				currenttext.texts.forEach(text => {
+					preview.srcdoc += 
+					`<p>${text}</p>`
+				});
+				preview.srcdoc += 
 				"<style> html { color: " + data.style.color + 
 				"; background-color: " + data.style.backgroundColor + 
 				"; font-family: " + data.style.font + 
