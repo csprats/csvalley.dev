@@ -4,7 +4,6 @@
 		<meta charset="utf-8" />
 		<title>Valley writter</title>
 		<meta name="generator" content="Geany 1.36" />
-		<link href="/src/writter-style.css" rel="stylesheet">
 	</head>
 
 	<body>
@@ -14,5 +13,113 @@
 		<br>
 		<iframe id="preview"></iframe>
 	</body>
-	<script src="/src/writter-main.js"></script>
+
+
+	<style>
+		html
+		{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-family: sans-serif;
+			text-align: center;
+		}
+		body {
+			background-color: #eee;
+		}
+		textarea, iframe
+		{
+			resize: none;
+			width: 400px;
+			height: 200px;
+			margin-bottom: 30px;
+			background-color: #eee;
+		}
+		input
+		{
+			margin-bottom: 20px;
+		}
+		button
+		{
+			width: 70px;
+			display: block;
+			margin: auto;
+			margin-bottom: 20px;
+		}
+		textarea, button, iframe, input
+		{
+			border-color: blue;
+			border-radius: 4px;
+		}
+		button:active
+		{
+			transform: translateY(2px);
+		}
+	</style>
+
+
+	<script>
+		let data = {
+			"text1": "This a text whit params",
+			"text2": "This a other text whit params",
+			"style": {
+				"color": "black",
+				"backgroundColor": "white",
+				"font": "sans-serif",
+				"align": "center"
+			}
+		};
+
+
+		document.getElementById("text").value = JSON.stringify(data, null, 3);
+
+		function print (n)
+		{
+			try
+			{
+				document.getElementById("preview").srcdoc = "";
+				if (document.getElementById("reload"))
+				{
+					document.getElementById("reload").remove();
+				}
+				
+				data = JSON.parse(document.getElementById("text").value);
+				const currenttext = JSON.parse(document.getElementById("text").value);
+				
+				for (let i = 1; i < n; i++)
+				{
+					const text = currenttext["text" + i];
+					document.getElementById("preview").srcdoc += 
+					"<p>" + text + "</p>";
+				}
+				document.getElementById("preview").srcdoc += 
+				"<style> html { color: " + data.style.color + 
+				"; background-color: " + data.style.backgroundColor + 
+				"; font-family: " + data.style.font + 
+				"; text-align: " + data.style.align +"} </style>";
+			}
+			catch (error)
+			{
+				if (!document.getElementById("reload"))
+				{
+					document.getElementById("preview").srcdoc = 
+					"<p>" + error +"</p> <style> html { color: red;} </style>";
+					const button = document.createElement("button");
+					button.textContent = "Reload";
+					button.id = "reload";
+					document.body.appendChild(button);
+					button.addEventListener("click", () => {
+						location.reload();
+					});
+				}
+			}
+			
+		} 
+
+		document.addEventListener("keyup", () => {
+			print(Object.keys(data).length);
+		});
+
+		print(Object.keys(data).length);
+	</script>
 </html>
