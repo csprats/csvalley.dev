@@ -1,3 +1,5 @@
+//import 'writter-style.css';
+
 let data = {
 	"text1": "This a text whit params",
 	"text2": "This a other text whit params",
