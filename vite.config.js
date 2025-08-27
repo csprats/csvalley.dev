@@ -16,7 +16,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
-        writer: resolve(__dirname, 'public/writter.html'),
+        writter: resolve(__dirname, 'writter/index.html'),
       },
     },
   },

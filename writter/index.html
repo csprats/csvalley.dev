@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Writter</title>
+		<meta name="generator" content="Geany 1.36" />
+	</head>
+
+	<body>
+		<h1>Writter</h1>
+		<textarea id="text" spellcheck="false" 
+		placeholder="Write here the JSON variables"></textarea>
+		<br>
+		<iframe id="preview"></iframe>
+	</body>
+
+
+	<style>
+		html
+		{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-family: sans-serif;
+			text-align: center;
+		}
+		body {
+			background-color: #eee;
+		}
+		textarea, iframe
+		{
+			resize: none;
+			width: 400px;
+			height: 200px;
+			margin-bottom: 30px;
+			background-color: #eee;
+		}
+		input
+		{
+			margin-bottom: 20px;
+		}
+		button
+		{
+			width: 70px;
+			display: block;
+			margin: auto;
+			margin-bottom: 20px;
+		}
+		textarea, button, iframe, input
+		{
+			border-color: blue;
+			border-radius: 4px;
+		}
+		button:active
+		{
+			transform: translateY(2px);
+		}
+	</style>
+
+
+	<script src="writter.js" type="module">
+
+	</script>
+</html>
