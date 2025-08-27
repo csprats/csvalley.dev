@@ -43,18 +43,8 @@ let data = {
 			}
 			catch (error)
 			{
-				if (!document.getElementById("reload"))
-				{
-					document.getElementById("preview").srcdoc = 
-					"<p>" + error +"</p> <style> html { color: red;} </style>";
-					const button = document.createElement("button");
-					button.textContent = "Reload";
-					button.id = "reload";
-					document.body.appendChild(button);
-					button.addEventListener("click", () => {
-						location.reload();
-					});
-				}
+				document.getElementById("preview").srcdoc = 
+				"<p>" + error +"</p> <style> html { color: red;} </style>";
 			}
 			
 		} 

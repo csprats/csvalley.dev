@@ -25,19 +25,14 @@ h1 {
 	margin-bottom: 20px;
 	color: #1b263b;
 }
-p {color: #271F30}
-p, ul {
-	margin-bottom: 15px;
-}
 
-ul li {
-    list-style-type: none;
-}
-
-a { color: #023047;}
-
-a:hover { color: #F58F29;}
-
-img.rounded {
-	border-radius: 5%;
+iframe, textarea {
+    border: solid #74A4BC 2.5px;
+    border-radius: 8px;
+    resize: none;
+    width: 350px;
+    height: 200px;
+    text-align: left;
+    margin-bottom: 20px;
+    font-size: 15px;
 }

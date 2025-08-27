@@ -1,4 +1,4 @@
-html {
+* {
   text-align: center;
   font-family: system-ui;
   margin: 0;
@@ -6,8 +6,8 @@ html {
 }
 
 header {
-  background-color: #eee;
-  padding: 10px 20px;
+  background-color: #74A4BC;
+  padding: 30px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -18,7 +18,7 @@ header {
 dialog {
   display: none;
   position: fixed;
-  transform: translate(5%, -20%);
+  transform: translate(43.5vw, 30vh);
   background-color: white;
   padding: 20px;
   border: 1px solid #ccc;
@@ -31,24 +31,25 @@ dialog[open] {
 
 input {
   border-radius: 8px;
-  border: solid black 2px;
+  border: solid #74A4BC 2px;
   background-color: white;
   padding: 5px;
   color: black;
   transition: border-color 2.5s ease;
   transition: color 0.5s ease;
   transition: background-color 0.5s ease;
+  margin-bottom: 10px;
 }
 
 input:hover, input:focus {
   color: white;
-  border-color: white;
+  border-color: #74A4BC;
   background-color: black;
 }
 
 button {
   border-radius: 999px;
-  border: solid white 1px;
+  border: solid #74A4BC 2px;
   background-color: white;
   padding: 10px;
   color: black;
