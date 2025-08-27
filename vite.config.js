@@ -7,17 +7,13 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export default defineConfig({
-  server: {
-    port: 3000,
-    open: false,
-  },
-
-  build: {
-    rollupOptions: {
-      input: {
-        main: resolve(__dirname, 'index.html'),
-        writter: resolve(__dirname, 'writter/index.html'),
-      },
+    build: {
+        rollupOptions: {
+            input: {
+                main: resolve(__dirname, 'index.html'),
+                writter: resolve(__dirname, 'writter/index.html'),
+                textEditor: resolve(__dirname, 'text-editor/index.html')
+            },
+        },
     },
-  },
 });
