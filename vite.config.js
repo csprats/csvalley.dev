@@ -13,6 +13,7 @@ export default defineConfig({
                 main: resolve(__dirname, 'index.html'),
                 writter: resolve(__dirname, 'writter/index.html'),
                 blog: resolve(__dirname, 'blog/index.html'),
+                blog1: resolve(__dirname, 'blog/page.html'),
                 textEditor: resolve(__dirname, 'text-editor/index.html')
             },
         },
