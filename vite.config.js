@@ -14,7 +14,8 @@ export default defineConfig({
                 writter: resolve(__dirname, 'writter/index.html'),
                 blog: resolve(__dirname, 'blog/index.html'),
                 blog1: resolve(__dirname, 'blog/page.html'),
-                textEditor: resolve(__dirname, 'text-editor/index.html')
+                textEditor: resolve(__dirname, 'text-editor/index.html'),
+                report: resolve(__dirname, 'report/index.html')
             },
         },
     },
