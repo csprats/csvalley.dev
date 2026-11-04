@@ -1,43 +1,290 @@
+/* --- Variables de Diseño Inspiradas en el Logo --- */
+:root {
+    --bg-primary: #0a0e17;       /* El azul oscuro del fondo del logo */
+    --bg-secondary: #121824;     /* Un azul intermedio para estructurar secciones */
+    --bg-card: #1b2336;          /* Fondo de tarjetas a juego con las sombras de las montañas */
+    --text-main: #e2e8f0;        /* Blanco limpio para textos principales */
+    --text-muted: #8892b0;       /* Gris azulado apagado para descripciones */
+    
+    /* Colores extraídos del logo */
+    --accent: #ff7300;           /* El cian/azul eléctrico brillante del lado izquierdo */
+    --accent-hover: #00d2ff;     /* El naranja brillante del fuego para los estados hover */
+    --accent-purple: #9d4edd;    /* El morado/magenta de la transición del fuego */
+    
+    --border-color: #232d42;     /* Bordes sutiles integrados con el tono oscuro */
+    --radius: 8px;
+    --font-stack: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* --- Reset global --- */
 * {
-	margin: 0;
-	padding: 0;
-	text-align: center;
-	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-html {
-	background-color: #eee;
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    font-family: var(--font-stack);
+    line-height: 1.6;
+    padding-bottom: 40px;
 }
 
-header {
-  background-color: #74A4BC;
-  padding: 10px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  box-sizing: border-box;
-  margin-bottom: 40px;
+/* --- Encabezado --- */
+.main-header {
+    background-color: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1.2rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-h1 {
-	margin-top: 20px;
-	margin-bottom: 20px;
-	color: #1b263b;
-}
-p {color: #271F30}
-p, ul {
-	margin-bottom: 15px;
+.header-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-ul li {
-    list-style-type: none;
+.branding h1 {
+    font-size: 1.5rem;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: -0.5px;
 }
 
-a { color: #023047;}
+.branding .author {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
 
-a:hover { color: #F58F29;}
+/* --- Sección Hero (Presentación) --- */
+.hero-section {
+    max-width: 1100px;
+    margin: 3rem auto 2rem auto;
+    padding: 0 2rem;
+}
 
-img.rounded {
-	border-radius: 5%;
+.hero-container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    background: linear-gradient(135deg, var(--bg-secondary), var(--bg-primary));
+    padding: 2.5rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border-color);
+}
+
+.profile-logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--accent);
+	transition: border-color 0.2s ease;
+}
+
+.profile-logo:hover {
+    border-color: var(--accent-hover);
+}
+
+.hero-text h2 {
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.hero-text p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    max-width: 700px;
+}
+
+/* --- Layout del Portafolio --- */
+.portfolio-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.portfolio-section {
+    margin-bottom: 3.5rem;
+}
+
+.portfolio-section h3 {
+    color: #fff;
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+/* Rejilla de proyectos */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Tarjetas de Proyectos */
+.project-card {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+/* --- Reemplaza esta regla de las tarjetas --- */
+.project-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-hover); /* Cambiado a naranja fuego */
+}
+
+/* --- Reemplaza estas reglas en la sección de botones --- */
+.btn-primary:hover {
+    background-color: var(--accent-hover); /* Cambiado a naranja fuego */
+    color: #fff !important; /* Texto blanco para mejor contraste en el fondo naranja */
+}
+
+.btn-secondary:hover {
+    background-color: var(--bg-card);
+    border-color: var(--accent-hover); /* El borde cambia a naranja fuego */
+    color: #fff !important;
+}
+
+.btn-text:hover {
+    background-color: rgba(255, 115, 0, 0.1); /* Fondo naranja sutil */
+    border-color: var(--accent-hover); /* El borde cambia a naranja fuego */
+    color: var(--accent-hover) !important; /* El texto interior cambia a naranja */
+}
+
+
+.project-card h4 {
+    color: #fff;
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+/* --- Enlaces normales al pasar el cursor sobre la tarjeta --- */
+.project-card:hover a {
+    color: var(--accent-hover);
+    text-decoration: underline;
+}
+
+/* --- Variación para las tarjetas con botones (Juegos principales) --- */
+/* Esto asegura que el botón primario mantenga su fondo naranja y texto blanco */
+.project-card:hover .btn-primary {
+    background-color: var(--accent-hover);
+    color: #fff !important;
+    text-decoration: none;
+}
+
+/* Esto asegura que los botones secundarios y de texto cambien suavemente junto a la tarjeta */
+.project-card:hover .btn-text {
+    background-color: rgba(255, 115, 0, 0.1);
+    border-color: var(--accent-hover);
+    color: var(--accent-hover) !important;
+    text-decoration: none;
+}
+
+/* --- Botones y Enlaces --- */
+a {
+    color: var(--accent);
+    text-decoration: none;
+	transition: color 0.2s ease;
+}
+
+a:hover {
+    text-decoration: underline;
+	color: var(--accent-hover)
+}
+
+.btn-primary, .btn-secondary, .btn-text {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-align: center;
+    transition: background-color 0.2s ease;
+    text-decoration: none !important;
+}
+
+.btn-primary {
+    background-color: var(--accent);
+    color: #0d1117 !important;
+}
+
+.btn-primary:hover {
+    background-color: #79c0ff;
+}
+
+.btn-secondary {
+    background-color: var(--bg-card);
+    color: var(--text-main) !important;
+    border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--border-color);
+}
+
+.btn-text {
+    background: transparent;
+    color: var(--accent) !important;
+    border: 1px solid var(--border-color);
+}
+
+.btn-text:hover {
+    background-color: rgba(88, 166, 255, 0.1);
+    border-color: var(--accent);
+}
+
+.status-note {
+    margin-top: 1.2rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* --- Footer --- */
+.main-footer {
+    text-align: center;
+    margin-top: 5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.link {
+	margin-left: 30px;
+}
+
+/* --- Ajustes Responsive --- */
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+    }
+    .header-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
 }

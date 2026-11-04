@@ -1,56 +1,131 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CS Valley</title>
+    <title>CS Valley | Independent Game & Web Developer</title>
     <link rel="stylesheet" href="src/styles.css">
-	<link rel="icon" href="/c.png">
-  </head>
-  <body>	
-		<header>
-			<h1>CSValley</h1>
-			<nav>
-				<h2>by csprats</h2>
-				<a href="https://v2-csvalley-dev.netlify.app">v2 page</a>
-			</nav>
-		</header>
-		<p><img class="rounded" src="/csvalley_logo.jpg" alt="csvalley" width="200"></p>
-		<p>Hi, I'm csprats and this is my independent study, 
-		I do Progamate video games and create web pages.</p>
-		<p>I've created a few games, like: </p>
-		<ul>
-			<li>
-				<a href="https://csprats.itch.io/space-galaxy-war" target="_blank">Space Galaxy War</a>
-			</li>
-			 <li>
-				 <a href="https://csprats.itch.io/boat-war" target="_blank">Boat War</a>
-			 </li>
-		 </ul>
-		 <p>These two are published to itchio</p>
-		 <p>I'm making a new game in GameMaker Studio. Be patient!</p>
-		 <p>And I have a famous game created in vanilla javascript:</p>
-		 <p><a href="https://asteroids.csvalley.dev/">JS-Asteroids</a></p>
-		 <p>And more!: </p>
-		 <ul>
-			 <li><a href="https://mole.csvalley.dev/">Whac a mole game,</a></li>
-			 <li><a href="https://js-pong-game-2.netlify.app/">Two player pong game,</a></li>
-			 <li><a href="https://stack-tower-game.netlify.app/">Stack tower game,</a></li>
-			 <li><a href="https://js-akanoid.netlify.app/">Arkanoid game,</a></li>
-			 <li><a href="https://js-jumper.netlify.app/">Jumper game</a></li>
-			 <li><a href="https://js-tetris-csvalley.netlify.app/">Tetris game</a></li>
-		 </ul>
-		 <p>I created a few tools:</p>
-		 <ul>
-			<li><a href="writter/">writter,</a></li>
-			<li><a href="text-editor/">CSText</a></li>
-			<li><a href="https://csvblog.netlify.app">CSBlog</a></li>
-		 </ul>
+    <link rel="icon" href="/c.png">
+</head>
+<body>
 
-		 <p>And a page of characters!</p>
-		 <ul>
-			<li><a href="https://chracters-dragon-ball.netlify.app/">Dragon Ball Page</a></li>
-			<li><a href="https://zelda-characters.netlify.app/">Zelda BOTH Page</a></li>
-		 </ul>
-	</body>
+    <!-- Encabezado / Navegación -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="branding">
+                <h1>CSValley</h1>
+                <span class="author">by csprats</span>
+            </div>
+            <nav class="main-nav">
+                <a href="https://github.com/csprats" class="link" target="_blank">Github</a>
+				<a href="https://csprats.itch.io" class="link" target="_blank">Itchio</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Presentación / Hero Section -->
+    <section class="hero-section">
+        <div class="hero-container">
+            <img class="profile-logo" src="/csvalley_logo.jpg" alt="CS Valley Logo">
+            <div class="hero-text">
+                <h2>Hi, I'm csprats</h2>
+                <p>Welcome to my independent studio, CSValley. I like creating websites and developing video games in my free time.</p>
+            </div>
+        </div>
+    </section>
+
+    <main class="portfolio-container">
+        
+        <!-- Sección de Juegos Destacados -->
+        <section class="portfolio-section">
+            <h3>Game prototypes</h3>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h4>JS-Asteroids</h4>
+                    <p>My best game built entirely in vanilla JavaScript.</p>
+                    <a href="https://asteroids.csvalley.dev/" target="_blank" class="btn-primary">Play Game</a>
+                </div>
+                <div class="project-card">
+                    <h4>Space Galaxy War</h4>
+                    <p>A classic space shooter made with GameMaker Studio. Published on itch.io.</p>
+                    <a href="https://csprats.itch.io/space-galaxy-war" target="_blank" class="btn-primary">View on Itch.io</a>
+                </div>
+                <div class="project-card">
+                    <h4>Boat War</h4>
+                    <p>An naval battle arcade game published on itch.io. <b>Unfinished!</b></p>
+                    <a href="https://csprats.itch.io/boat-war" target="_blank" class="btn-primary">View on Itch.io</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Otros Juegos Javascript -->
+        <section class="portfolio-section">
+            <h3>JavaScript Arcade Games</h3>
+            <div class="project-grid text-links">
+                <div class="project-card mini">
+                    <h4>Whac-A-Mole</h4>
+                    <a href="https://mole.csvalley.dev/" target="_blank">Play Demo →</a>
+                </div>
+                <div class="project-card mini">
+                    <h4>Two-Player Pong</h4>
+                    <a href="https://js-pong-game-2.netlify.app/" target="_blank">Play Demo →</a>
+                </div>
+                <div class="project-card mini">
+                    <h4>Stack Tower</h4>
+                    <a href="https://stack-tower-game.netlify.app/" target="_blank">Play Demo →</a>
+                </div>
+                <div class="project-card mini">
+                    <h4>Arkanoid</h4>
+                    <a href="https://js-akanoid.netlify.app/" target="_blank">Play Demo →</a>
+                </div>
+                <div class="project-card mini">
+                    <h4>Jumper Game</h4>
+                    <a href="https://js-jumper.netlify.app/" target="_blank">Play Demo →</a>
+                </div>
+                <div class="project-card mini">
+                    <h4>Tetris</h4>
+                    <a href="https://js-tetris-csvalley.netlify.app/" target="_blank">Play Demo →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Herramientas / Tools -->
+        <section class="portfolio-section">
+            <h3>Web Tools & Utilities</h3>
+            <div class="project-grid">
+				<div class="project-card tool">
+					<h4>CSText</h4>
+					<p>A custom, lightweight web text editor with built-in HTML export functionality.</p>
+					<a href="text-editor/" class="btn-text" target="_blank">Open Tool</a>
+				</div>
+				<div class="project-card tool">
+					<h4>JS-Writer</h4>
+					<p>A web workspace that converts custom JSON data into clean, structured HTML.</p>
+					<a href="writter/" class="btn-text" target="_blank">Open Tool</a>
+				</div>
+            </div>
+        </section>
+
+        <!-- Fan Pages / Personajes -->
+        <section class="portfolio-section">
+            <h3>Character Database Pages</h3>
+            <div class="project-grid profiles">
+                <div class="project-card mini-profile">
+                    <h4>Dragon Ball Universe</h4>
+                    <a href="https://chracters-dragon-ball.netlify.app/" target="_blank" class="btn-secondary">Visit Page</a>
+                </div>
+                <div class="project-card mini-profile">
+                    <h4>Zelda: BOTW Database</h4>
+                    <a href="https://zelda-characters.netlify.app/" target="_blank" class="btn-secondary">Visit Page</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+	<footer class="main-footer">
+		<p>© 2026 CSValley. All rights reserved.</p>
+	</footer>
+
+</body>
 </html>

@@ -36,6 +36,7 @@ const downlod = (link) => {
   link.href = url
 }
 
+/*
 const publish = () => {
   fetch('https://backend-csblog.onrender.com/api/cschat', {
     method: 'POST', // Especifica el método POST
@@ -47,13 +48,13 @@ const publish = () => {
       message: document.getElementById('text').innerHTML + '<style>html { text-align: center; font-family: system-ui; }</style>'
     })
   })
-}
+}*/
 
 closeNameModal.addEventListener('click', () => {
   username = inputName.value
   insertedName = true
   namemodal.close()
-  publish()
+  //publish()
 })
 
 document.getElementById('bold-type').addEventListener('click', () => {
@@ -94,7 +95,7 @@ document.getElementById('download').addEventListener('click', () => {
   downlod(document.getElementById('download').parentNode)
 })
 
-document.getElementById('publish').addEventListener('click', () => {
+/*document.getElementById('publish').addEventListener('click', () => {
   if (insertedName) publish()
   else namemodal.showModal()
-})
+})*/
